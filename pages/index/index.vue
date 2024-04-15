@@ -1,5 +1,5 @@
 <template>
-	<view class="index">
+	<view class="a">
 		<FloatNav></FloatNav>
 	</view>
 </template>
