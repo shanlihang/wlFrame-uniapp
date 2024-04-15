@@ -25,8 +25,11 @@ onHide(() => {
 </script>
 
 <style>
+<<<<<<< HEAD
 	/*每个页面公共css */
 	page{
 		background-color: v-bind(themeOption.boxBgColor);
 	}
+=======
+>>>>>>> b3991cc89cfef9b1626fbfc5b62881acad2ad1c3
 </style>

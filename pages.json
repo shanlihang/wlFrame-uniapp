@@ -7,7 +7,25 @@
 				"enablePullDownRefresh":true
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/home/home",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "我的",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/other/other",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "其他",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"navigationStyle": "custom"
 	},
