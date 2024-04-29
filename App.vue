@@ -11,5 +11,8 @@ onHide(() => {
 </script>
 
 <style>
-
+page{
+	width: 100%;
+	background-color: #F3F2F7;
+}
 </style>
