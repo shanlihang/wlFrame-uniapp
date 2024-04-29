@@ -1,6 +1,6 @@
 <template>
 	<view class="index">
-		首页
+		计划
 	</view>
 </template>
 
