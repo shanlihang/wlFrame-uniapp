@@ -14,7 +14,7 @@
 					<wd-img
 						width="150rpx"
 						height="150rpx"
-						src="../../static/logo.png"
+						src="../../static/noAvatar.png"
 						:enable-preview="true"
 					/>
 				</view>
@@ -71,6 +71,7 @@ const menuList = reactive([
 				width: 150rpx;
 				height: 150rpx;
 				overflow: hidden;
+				border: 6rpx solid #E0E0E0;
 				border-radius: 50%;
 			}
 			.name{
