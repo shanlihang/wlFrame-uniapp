@@ -34,7 +34,6 @@
 					</view>
 				</view>
 			</view>
-			<button @click="to">123</button>
 		</view>
 	</view>
 </template>
@@ -42,12 +41,6 @@
 
 <script setup lang="ts">
 import { reactive } from 'vue';
-
-const to = () => {
-	uni.navigateTo({
-		url:'/pages/avatarAndName/avatarAndName'
-	})
-}
 	
 const menuList = reactive([
 	{id:1,name:'个人资料',path:''},
