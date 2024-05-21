@@ -4,12 +4,20 @@
 			<view class="item">活动</view>
 			<view class="item" style="margin-bottom:10rpx;">打卡</view>
 		</wd-fab>
+		<!-- <EmptyStatus /> -->
+		<button type="default" @click="test">跳转</button>
 	</view>
 </template>
 
 
 <script setup lang="ts">
+import EmptyStatus from '../../components/EmptyStatus/EmptyStatus.vue'
 
+const test = () => {
+	uni.navigateTo({
+		url:'/pages/test/test'
+	})
+}
 </script>
 
 <style lang="less" scoped>
