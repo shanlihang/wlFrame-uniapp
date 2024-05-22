@@ -2,32 +2,46 @@
 	<view class="upload">
 		<view class="list">
 			<view class="item" v-for="item in files" :key="item.tempFilePath">
-				<image v-if="item.fileType=='image'" :src="item.tempFilePath" style="width: 100%;height: 100%;" @click="preview(item.tempFilePath)"></image>
-				<video v-else :src="item.tempFilePath" style="width: 100%;height: 100%;" controls @click="preview(item.tempFilePath)"></video>
-				<view class="del" @click="deleteMedia(item)">
+				<image v-if="item.fileType=='image'" :src="item.tempFilePath" style="width: 98%;height: 98%;" @click="preview(item.tempFilePath)"></image>
+				<video v-else :src="item.tempFilePath" style="width: 98%;height: 98%;" controls @click="preview(item.tempFilePath)"></video>
+				<view class="del" @click="deleteMedia(item)" v-if="!props.disabled">
 					<image src="../../static/close.svg" style="width: 50rpx;height: 50rpx;" mode=""></image>
 				</view>
 			</view>
-			<view class="choose" @click="showAction">+</view>
+			<view class="choose" @click="showAction" v-if="files.length<props.size && !props.disabled">
+				<view class="add">+</view>
+			</view>
 		</view>
 	</view>
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue'
+import {ref,watch} from 'vue'
 import {FileItem} from './model'
 
-const files = ref<Array<FileItem>>([])
+const props = withDefaults(defineProps<{
+	modelValue:FileItem[]
+	disabled:boolean,
+	size:number
+}>(),{
+	modelValue:() => [],
+	disabled:false,
+	size:9
+})
+const emits = defineEmits(['update:modelValue'])
+const files = ref<Array<FileItem>>(props.modelValue)
 
 const showAction = () => {
 	uni.chooseMedia({
-		count: 9,
+		count: props.size,
 		mediaType: ['mix'],
 		sourceType: ['album', 'camera'],
 		maxDuration: 15,
 		camera: 'back',
 		success(res) {
-		  files.value.push(...res.tempFiles)
+			//配置上传接口
+			//格式修改
+			files.value.push(...res.tempFiles)
 		},
 		fail(res){
 			console.log(res);
@@ -36,7 +50,11 @@ const showAction = () => {
 }
 
 const preview = (path:string) => {
-	console.log(path);
+	let index = files.value.findIndex(i => i.tempFilePath == path)
+	let map = files.value.map(e => e.tempFilePath)
+	uni.navigateTo({
+		url:`/pages/previewMedia/previewMedia?list=${JSON.stringify(files.value)}&current=${index}`
+	})
 }
 
 const deleteMedia = (item:FileItem) => {
@@ -56,23 +74,36 @@ const deleteMedia = (item:FileItem) => {
 		}
 	});
 }
+
+watch(
+	() => files.value,
+	(data) => {
+		emits('update:modelValue',data)
+	}
+)
+watch(
+	() => props.modelValue,
+	(data) => {
+		files.value = data
+	}
+)
 </script>
 
 <style scoped lang="less">
 .upload{
 	width: 90%;
-	height: 50vh;
-	margin: 300rpx auto;
-	background-color: aquamarine;
+	margin: 0 auto;
 	.list{
 		width: 100%;
-		display: grid;
-		grid-template-rows:250rpx 250rpx 250rpx;
-		grid-template-columns: 33% 33% 33%;
-		gap: 0.5%;
+		display: flex;
+		justify-content: left;
+		flex-wrap: wrap;
 		.item,.choose{
-			box-sizing: border-box;
-			border: 2rpx solid #494949;
+			width: 33.3%;
+			height: 220rpx;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			position: relative;
 			.del{
 				width: 50rpx;
@@ -84,10 +115,17 @@ const deleteMedia = (item:FileItem) => {
 			}
 		}
 		.choose{
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 100rpx;
+			
+			.add{
+				width: 98%;
+				height: 98%;
+				box-sizing: border-box;
+				border: 2rpx solid #999;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-size: 100rpx;
+			}
 		}
 	}
 }

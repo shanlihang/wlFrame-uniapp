@@ -48,10 +48,18 @@
         		"navigationBarTitleText" : "",
         		"enablePullDownRefresh" : false
         	}
+        },
+        {
+        	"path" : "pages/previewMedia/previewMedia",
+        	"style" : 
+        	{
+        		"navigationBarTitleText" : "预览",
+        		"enablePullDownRefresh" : false
+        	}
         }
     ],
 	"globalStyle": {
-		"navigationStyle": "custom"
+		// "navigationStyle": "custom"
 	},
 	"tabBar": {
 		"color": "#A0A0A0",
