@@ -1,6 +1,6 @@
 <template>
-	<view class="active">
-		活动
+	<view class="anniversary">
+		倒数日
 	</view>
 </template>
 

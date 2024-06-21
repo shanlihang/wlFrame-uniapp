@@ -1,5 +1,5 @@
 <template>
-	<view class="index">
+	<view class="home">
 		<view class="bk-img">
 			
 		</view>
@@ -80,7 +80,7 @@ const apps = reactive([
 </script>
 
 <style lang="less" scoped>
-.index {
+.home {
 	width: 100%;
 	.bk-img{
 		width: 100%;

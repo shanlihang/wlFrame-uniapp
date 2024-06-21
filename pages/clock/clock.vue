@@ -1,6 +1,6 @@
 <template>
-	<view class="active">
-		活动
+	<view class="clock">
+		daka
 	</view>
 </template>
 

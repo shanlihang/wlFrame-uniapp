@@ -17,8 +17,8 @@
 
 <script setup lang="ts">
 import { useQueue } from '@/uni_modules/wot-design-uni'
-import {reactive} from 'vue'
-import {createActionSheet} from '../../utils/feedback'
+import {ref,reactive} from 'vue'
+import {createToast,createActionSheet} from '../../utils/feedback'
 
 const { closeOutside } = useQueue()
 
@@ -46,9 +46,30 @@ const typeOptions = reactive([
 ])
 
 const handleAdd = () => {
-	createActionSheet(['打卡','代办','倒数日'],(res) => {
-		console.log(res.tapIndex);
+	createActionSheet(['备忘录','打卡','倒数日'],(res) => {
+		if(res.tapIndex == 0){
+			uni.navigateTo({
+				url:'/pages/memo/memo',
+			})
+		}else if(res.tapIndex == 1){
+			uni.navigateTo({
+				url:'/pages/clock/clock',
+			})
+		}else if(res.tapIndex == 2){
+			uni.navigateTo({
+				url:'/pages/anniversary/anniversary',
+			})
+		}else{
+			createToast("无效操作")
+		}
 	})
+	//消息订阅
+	// uni.requestSubscribeMessage({
+	//   tmplIds: ['f3KvgxBRSD_lSPoevKMNrSTFdlRW_9gSxcEWDtueqDE','__6qMN8GCplL4pL49X7iwg1eBcGt4Xuygf02jMT0ZRg','WAHNe0zz-VZkvjeMZ4jzVJqaH0LSktfAdYa1oD8vNRc'],
+	//   success (res) {
+	// 	  console.log(res);
+	//   }
+	// })
 }
 
 function handleChangeDate({ value }) {

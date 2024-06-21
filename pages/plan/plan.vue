@@ -1,5 +1,5 @@
 <template>
-	<view class="index">
+	<view class="plan">
 		计划
 	</view>
 </template>
@@ -10,7 +10,7 @@
 </script>
 
 <style lang="less" scoped>
-.index {
+.plan {
 	width: 100%;
 	height: 100vh;
 }
