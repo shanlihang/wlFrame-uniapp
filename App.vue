@@ -12,7 +12,7 @@ onHide(() => {
 
 <style>
 page{
-	width: 100%;
+	box-sizing: border-box;
 	background-color: #F3F2F7;
 	color: #383838;
 }

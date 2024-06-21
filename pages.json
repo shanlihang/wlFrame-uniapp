@@ -56,10 +56,20 @@
         		"navigationBarTitleText" : "预览",
         		"enablePullDownRefresh" : false
         	}
+        },
+        {
+        	"path" : "pages/login/login",
+        	"style" : 
+        	{
+        		"enablePullDownRefresh" : false,
+				"navigationStyle": "custom"
+        	}
         }
     ],
 	"globalStyle": {
 		// "navigationStyle": "custom"
+		"navigationBarBackgroundColor": "#efefef",
+		"navigationBarTextStyle": "black"
 	},
 	"tabBar": {
 		"color": "#A0A0A0",
