@@ -8,7 +8,6 @@
 						clearable
 						v-model="addForm.title"
 						placeholder="请输入备忘录标题"
-						:rules="[{ required: true, message: '请填写备忘录标题' }]"
 					/>
 				</wd-cell>
 				<wd-cell title="备忘录内容" required vertical>
@@ -19,7 +18,6 @@
 						show-word-limit
 					    v-model="addForm.content"
 					    placeholder="请输入备忘录内容"
-					    :rules="[{ required: true, message: '请填写备忘录内容' }]"
 					/>
 				</wd-cell>
 				
@@ -56,16 +54,7 @@ const addForm = reactive<AddForm>({
 })
 
 const handleSubmit = () => {
-	form.value.validate().then(({ valid, errors }) => {
-		if (valid) {
-			console.log(valid);
-		}else{
-			console.log(errors);
-		}
-    })
-    .catch((error) => {
-		console.log(error);
-    })
+	console.log(addForm);
 }
 </script>
 

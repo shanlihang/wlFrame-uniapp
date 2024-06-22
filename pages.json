@@ -37,7 +37,7 @@
         	"path" : "pages/avatarAndName/avatarAndName",
         	"style" : 
         	{
-        		"navigationBarTitleText" : "",
+        		"navigationBarTitleText" : "信息设置",
         		"enablePullDownRefresh" : false
         	}
         },
