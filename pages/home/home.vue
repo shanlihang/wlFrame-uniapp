@@ -34,7 +34,7 @@
 				</view>
 			</view>
 			<view class="menu">
-				<view class="item" v-for="item in menuList.base">
+				<view class="item" v-for="item in menuList.base" @click="jumpMenu(item.path)">
 					<view class="title">{{item.name}}</view>
 					<view class="icon">
 						<wd-icon name="arrow-right" color="#A0A0A0" size="22px"></wd-icon>
@@ -42,7 +42,7 @@
 				</view>
 			</view>
 			<view class="menu">
-				<view class="item" v-for="item in menuList.contact">
+				<view class="item" v-for="item in menuList.contact" @click="jumpMenu(item.path)">
 					<view class="title">{{item.name}}</view>
 					<view class="icon">
 						<wd-icon name="arrow-right" color="#A0A0A0" size="22px"></wd-icon>
@@ -59,23 +59,25 @@ import { reactive } from 'vue';
 	
 const menuList = reactive({
 	base:[
-		{id:1,name:'个人资料',path:''},
-		{id:2,name:'系统主题',path:''},
-		{id:3,name:'意见反馈',path:''},
-		{id:4,name:'系统设置',path:''},
+		{id:1,name:'个人资料',path:'/pages/about/about'},
+		{id:2,name:'统计报表',path:'/pages/about/about'},
+		{id:3,name:'系统设置',path:'/pages/about/about'},
 	],
 	contact:[
-		{id:1,name:'帮助中心',path:''},
-		{id:2,name:'用户协议',path:''},
-		{id:3,name:'隐私政策',path:''},
-		{id:4,name:'关于我们',path:''},
+		{id:1,name:'帮助中心',path:'/pages/about/about'},
+		{id:2,name:'关于我们',path:'/pages/about/about'},
 	]
 })
-
 const apps = reactive([
 	{id:1,name:'github',icon:'github-filled'},
 	{id:2,name:'chorme',icon:'chrome-filled'}
 ])
+
+const jumpMenu = (path:string) => {
+	uni.navigateTo({
+		url:path
+	})
+}
 
 </script>
 
