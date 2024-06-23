@@ -1,7 +1,7 @@
 <template>
 	<view class="contact">
 		<view class="action">
-			<view style="width: 200rpx;text-align: center;color: #868686;">快捷操作 :</view>
+			<view style="width: 150rpx;text-align: center;color: #868686;">快捷操作 :</view>
 			<wd-tag round style="margin-right: 20rpx;" @click="handleDial">拨打电话</wd-tag>
 			<view class="gap"></view>
 			<wd-tag round @click="addContact">保存到通讯录</wd-tag>
