@@ -108,6 +108,33 @@
             }
             
         }
+        ,{
+            "path" : "pages/about/policy/policy",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "隐私政策",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/about/protocol/protocol",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "用户协议",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+            "path" : "pages/about/version/version",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "版本更新",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		// "navigationStyle": "custom"
