@@ -1,9 +1,8 @@
 <template>
 	<view class="feedback">
-		
 		<view class="add">
 			<wd-form ref="form" :model="addForm">
-				<wd-cell-group>
+				<wd-cell-group border>
 					<wd-cell title-width="170rpx" title="反馈类型" center required>
 						<wd-picker align-right :columns="options" v-model="addForm.type"/>
 					</wd-cell>
@@ -17,7 +16,6 @@
 						    placeholder="请输入反馈描述"
 						/>
 					</wd-cell>
-					
 				</wd-cell-group>
 			</wd-form>
 		</view>
