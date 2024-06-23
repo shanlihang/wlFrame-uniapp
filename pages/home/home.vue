@@ -59,7 +59,7 @@ import { reactive } from 'vue';
 	
 const menuList = reactive({
 	base:[
-		{id:1,name:'个人资料',path:'/pages/about/about'},
+		{id:1,name:'个人中心',path:'/pages/userInfo/userInfo'},
 		{id:2,name:'统计报表',path:'/pages/about/about'},
 		{id:3,name:'系统设置',path:'/pages/about/about'},
 	],

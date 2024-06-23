@@ -4,7 +4,6 @@
 			<wd-cell-group border>
 				<wd-cell title-width="170rpx" title="备忘录标题" center required>
 					<wd-input
-						custom-input-class="input"
 						no-border
 						clearable
 						v-model="addForm.title"
@@ -79,9 +78,6 @@ const changeFlag = ({value}) => {
 .memo{
 	width: 100vw;
 	height: 100vh;
-	.input{
-		text-align: end;
-	}
 	.btn{
 		margin: 0 24rpx;
 	}
