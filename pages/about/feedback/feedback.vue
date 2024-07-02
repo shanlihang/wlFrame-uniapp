@@ -2,10 +2,11 @@
 	<view class="feedback">
 		<view class="add">
 			<wd-form ref="form" :model="addForm">
-				<wd-cell-group border>
+				<wd-cell-group>
 					<wd-cell title-width="170rpx" title="反馈类型" center required>
 						<wd-picker align-right :columns="options" v-model="addForm.type"/>
 					</wd-cell>
+					<wd-gap bg-color="#F3F2F7" height="2rpx"></wd-gap>
 					<wd-cell title-width="170rpx" title="反馈描述" required vertical>
 						<wd-textarea
 						    clearable
@@ -30,10 +31,10 @@
 		
 		<wd-action-sheet v-model="flag" title="反馈历史" close-on-click-modal safe-area-inset-bottom @close="close">
 			<view style="height: 80vh;padding: 0 24rpx;">
-				<card v-for="item in 10" :key="item"/>
-				<wd-gap bg-color="#fff" height="50rpx"></wd-gap>
+				<view style="width: 100%;height: 100%;overflow-y: scroll;">
+					<card v-for="item in 10" :key="item"/>
+				</view>
 			</view>
-			
 		</wd-action-sheet>
 	</view>
 </template>

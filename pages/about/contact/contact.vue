@@ -6,7 +6,9 @@
 			<view class="gap"></view>
 			<wd-tag round @click="addContact">保存到通讯录</wd-tag>
 		</view>
-		<wd-cell v-for="item in data" :key="item.id" :title="item.title" :value="item.value" clickable @click="handleCopy(item.value)" />
+		<wd-cell-group border>
+			<wd-cell v-for="item in data" :key="item.id" :title="item.title" :value="item.value" clickable @click="handleCopy(item.value)" />
+		</wd-cell-group>
 	</view>
 </template>
 

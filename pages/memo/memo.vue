@@ -1,15 +1,16 @@
 <template>
 	<view class="memo">
 		<wd-form ref="form" :model="addForm">
-			<wd-cell-group border>
+			<wd-cell-group>
 				<wd-cell title-width="170rpx" title="备忘录标题" center required>
 					<wd-input
 						no-border
-						clearable
 						v-model="addForm.title"
 						placeholder="请输入备忘录标题"
+						align-right
 					/>
 				</wd-cell>
+				<wd-gap bg-color="#F3F2F7" height="2rpx"></wd-gap>
 				<wd-cell title-width="170rpx" title="备忘录内容" required vertical>
 					<wd-textarea
 					    clearable
@@ -20,14 +21,14 @@
 					    placeholder="请输入备忘录内容"
 					/>
 				</wd-cell>
-				
 			</wd-cell-group>
 			<wd-gap bg-color="#F3F2F7" height="50rpx"></wd-gap>
-			<wd-cell-group border>
+			<wd-cell-group>
 				<wd-cell title-width="170rpx" title="开启提醒" center>
 					<wd-switch v-model="flag" size="24px" active-color="#31AE37" @change="changeFlag" />
 				</wd-cell>
 				<template v-if="flag">
+					<wd-gap bg-color="#F3F2F7" height="2rpx"></wd-gap>
 					<wd-cell title-width="170rpx" title="提醒时间" center>
 						<wd-datetime-picker v-model="addForm.time" :default-value="Date.now()" placeholder="请选择提醒时间" />
 					</wd-cell>

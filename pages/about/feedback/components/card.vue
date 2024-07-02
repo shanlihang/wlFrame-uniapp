@@ -9,6 +9,7 @@
 			<view class="desc">反馈描述：发i就是发哦师范类是否能拉是否能拉克丝贝纳颂反馈历史凡是你疯啦  </view>
 			<view class="handle">处理详情：不是福布斯发布时间可否把开始</view>
 		</view>
+		<wd-gap bg-color="#F3F2F7" height="24rpx"></wd-gap>
 	</view>
 </template>
 

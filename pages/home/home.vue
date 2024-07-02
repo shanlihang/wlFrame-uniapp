@@ -1,7 +1,12 @@
 <template>
 	<view class="home">
 		<view class="bk-img">
-			
+			<wd-img
+				width="100%"
+				height="400rpx"
+				src="/static/test.jpg"
+				:enable-preview="true"
+			/>
 		</view>
 		<view class="box">
 			<view class="info">
@@ -9,7 +14,7 @@
 					<wd-img
 						width="150rpx"
 						height="150rpx"
-						src="../../static/noAvatar.png"
+						src="/static/noAvatar.png"
 						:enable-preview="true"
 					/>
 				</view>
@@ -88,7 +93,6 @@ const jumpMenu = (path:string) => {
 		width: 100%;
 		height: 400rpx;
 		overflow: hidden;
-		background-color: aqua;
 	}
 	.box{
 		width: 100%;

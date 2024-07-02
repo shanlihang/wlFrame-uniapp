@@ -2,19 +2,20 @@
 	<view class="userInfo">
 		<wd-form ref="form" :model="form">
 			<wd-cell-group>
-				<wd-cell title-width="170rpx" title="头像" center required>
+				<wd-cell title-width="170rpx" title="头像" center>
 					<wd-img
 						:width="100"
 						:height="100"
 						:src="form.avatar"
 					/>
 				</wd-cell>
-				<wd-cell title-width="170rpx" title="昵称" center required>
+				<wd-gap bg-color="#F3F2F7" height="2rpx"></wd-gap>
+				<wd-cell title-width="170rpx" title="昵称" center>
 					<wd-input
 						no-border
-						clearable
 						v-model="form.nickName"
 						placeholder="请输入昵称"
+						align-right
 					/>
 				</wd-cell>
 			</wd-cell-group>
@@ -51,7 +52,7 @@ interface Form{
 }
 
 const form = reactive<Form>({
-	avatar:'../../static/noAvatar.png',
+	avatar:'/static/noAvatar.png',
 	nickName:'asfasfasfas'
 })
 
