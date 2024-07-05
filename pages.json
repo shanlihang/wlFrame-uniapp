@@ -148,7 +148,7 @@
             "path" : "pages/error/error",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "错误",
+                "navigationBarTitleText": "错误提醒",
                 "enablePullDownRefresh": false
             }
         }
