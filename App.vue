@@ -1,13 +1,16 @@
 <script setup lang="ts">
-import {onLaunch,onHide} from '@dcloudio/uni-app'
-
+import {onLaunch,onHide,onThemeChange} from '@dcloudio/uni-app'
+onThemeChange((option) => {
+	console.log(option.theme)
+})
 onLaunch(() => {
-	console.log('App Launch')
+	console.log('应用初始化')
 })
 
 onHide(() => {
-	console.log('App Hide')
+	console.log('应用切换后台')
 }) 
+
 </script>
 
 <style>
