@@ -144,6 +144,14 @@
             }
             
         }
+        ,{
+            "path" : "pages/error/error",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "错误",
+                "enablePullDownRefresh": false
+            }
+        }
     ],
 	"globalStyle": {
 		// "navigationStyle": "custom"
